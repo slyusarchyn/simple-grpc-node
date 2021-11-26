@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package contacts;
+
+service Contacts {
+  rpc find(FindRequest) returns (FindResponse) {}
+}
+
+message FindRequest {
+  string phone = 1;
+}
+
+message FindResponse {
+  repeated Contact results = 1;
+}
+
+message Contact {
+  int64 id = 1;
+  string phone = 2;
+}
